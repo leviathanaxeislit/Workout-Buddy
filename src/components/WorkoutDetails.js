@@ -7,6 +7,9 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutsContext()
+/**
+ * It's a function that deletes a workout from the database.
+ */
 
   const handleClick = async () => {
     const response = await fetch('https://backendworkoutbuddy.herokuapp.com/api/workouts/' + workout._id, {

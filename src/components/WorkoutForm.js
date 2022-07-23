@@ -1,6 +1,29 @@
 import { useState } from 'react'
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 
+/**
+ * The WorkoutForm function is a React component that renders a form for creating a new workout. 
+ * 
+ * The form has three inputs: title, load, and reps. 
+ * 
+ * When the form is submitted, the handleSubmit function is called. 
+ * 
+ * The handleSubmit function makes a POST request to the backend API. 
+ * 
+ * If the request is successful, the new workout is added to the workouts array in the Redux store. 
+ * 
+ * If the request is unsuccessful, the error message is displayed. 
+ * 
+ * The error message is also displayed if the user tries to submit the form without filling out all of
+ * the fields. 
+ * 
+ * The error message is displayed in a div with the class name "error". 
+ * 
+ * The input fields that the user did not fill out are highlighted in red. 
+ * 
+ * The input fields are highlighted in red by
+ * @returns The WorkoutForm component is being returned.
+ */
 const WorkoutForm = () => {
   const { dispatch } = useWorkoutsContext()
 
