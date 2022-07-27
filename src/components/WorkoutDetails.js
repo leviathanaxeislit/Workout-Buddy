@@ -12,7 +12,7 @@ const WorkoutDetails = ({ workout }) => {
  */
 
   const handleClick = async () => {
-    const response = await fetch('https://backendworkoutbuddy.herokuapp.com/api/workouts/' + workout._id, {
+    const response = await fetch('https://workoutbuddybackend.onrender.com/api/workouts/' + workout._id, {
       method: 'DELETE'
     })
     const json = await response.json()

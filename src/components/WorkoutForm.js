@@ -38,7 +38,7 @@ const WorkoutForm = () => {
 
     const workout = {title, load, reps}
     
-    const response = await fetch('https://backendworkoutbuddy.herokuapp.com/api/workouts', {
+    const response = await fetch('https://workoutbuddybackend.onrender.com/api/workouts', {
       method: 'POST',
       body: JSON.stringify(workout),
       headers: {
@@ -63,6 +63,8 @@ const WorkoutForm = () => {
   }
 
   return (
+    /* The above code is creating a form that allows the user to input a title, load, and reps. The
+    form is then submitted and the data is sent to the database. */
     <form className="create" onSubmit={handleSubmit}> 
       <h3>Add a New Workout</h3>
 
