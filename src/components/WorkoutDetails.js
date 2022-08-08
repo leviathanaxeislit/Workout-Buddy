@@ -1,31 +1,22 @@
-
-import 'material-icons/iconfont/material-icons.css';
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
 // date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
-
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutsContext()
-  const {user} = useAuthContext()
-/**
- * It's a function that deletes a workout from the database.
- */
+  const { user } = useAuthContext()
 
   const handleClick = async () => {
-
-    if (!user){
+    if (!user) {
       return
     }
 
-
-    const response = await fetch('https://workoutbuddybackend.onrender.com/api/workouts/' + workout._id, {
-      
-    method: 'DELETE',
+    const response = await fetch(process.env.REACT_APP_API_URL + workout._id, {
+      method: 'DELETE',
       headers: {
-        'Authorisation': `Bearer ${user.token}`
+        'Authorization': `Bearer ${user.token}`
       }
     })
     const json = await response.json()
@@ -39,10 +30,9 @@ const WorkoutDetails = ({ workout }) => {
     <div className="workout-details">
       <h4>{workout.title}</h4>
       <p><strong>Load (kg): </strong>{workout.load}</p>
-      <p><strong>Number of reps: </strong>{workout.reps}</p>
+      <p><strong>Reps: </strong>{workout.reps}</p>
       <p>{formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}</p>
-      <span className="material-icons" onClick={handleClick}>delete_outlined</span>
-      
+      <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
     </div>
   )
 }

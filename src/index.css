@@ -1,6 +1,6 @@
 /* google font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
-@import 'material-icons/iconfont/material-icons.css';
+
 /* layout */
 :root {
   --primary: #1aac83;
@@ -106,10 +106,9 @@ nav {
   display: flex;
   align-items: center;
 }
-nav a, nav button{
+nav a, nav button {
   margin-left: 10px;
 }
-
 nav button {
   background: #fff;
   color: var(--primary);
